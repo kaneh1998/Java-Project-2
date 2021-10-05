@@ -1,0 +1,31 @@
+#BlueJ class context
+comment0.target=GameRules
+comment0.text=\r\n\ Maintains\ game\ rules.\ Checks\ if\ a\ move\ is\ legal.\r\n\ It\ also\ maintains\ move\ turns\ and\ the\ game\ stage.\r\n\r\n\ @Student\ 1\ Name\:\ \r\n\ @Student\ 1\ Number\:\ \r\n\ \r\n\ @Student\ 2\ Name\:\ \r\n\ @Student\ 2\ Number\:\r\n
+comment1.params=
+comment1.target=GameRules()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameRules\r\n
+comment2.params=
+comment2.target=boolean\ isMoveStage()
+comment2.text=\r\n\ returns\ moveStage\r\n
+comment3.params=
+comment3.target=boolean\ isGoatsTurn()
+comment3.text=\r\n\ returns\ true\ iff\ it\ is\ goats\ turn\r\n
+comment4.params=n
+comment4.target=void\ addGoat(int)
+comment4.text=\r\n\ Adds\ (+1\ or\ -1)\ to\ goat\ numbers.\r\n\ Changes\ the\ goatsTurn\ and\ moveStage\ as\ per\ rules.\r\n
+comment5.params=
+comment5.target=int\ getNumGoats()
+comment5.text=\r\n\ returns\ number\ of\ goats\r\n
+comment6.params=
+comment6.target=void\ incrTigers()
+comment6.text=\r\n\ increments\ tigers\ and\ gives\ turn\ back\ to\ goats\r\n
+comment7.params=x\ y\ bkSize
+comment7.target=int\ nearestLoc(int,\ int,\ int)
+comment7.text=\r\n\ Returns\ the\ nearest\ valid\ location\ (0-23)\ on\ the\ board\ to\ the\ x,y\ mouse\ click.\r\n\ Locations\ are\ described\ in\ project\ description\ on\ LMS.\r\n\ You\ will\ need\ bkSize\ &\ GameViewer.locs\ to\ compute\ the\ distance\ to\ a\ location.\r\n\ If\ the\ click\ is\ close\ enough\ to\ a\ valid\ location\ on\ the\ board,\ return\ \r\n\ that\ location,\ otherwise\ return\ -1\ (when\ the\ click\ is\ not\ close\ to\ any\ location).\r\n\ Choose\ a\ threshold\ for\ proximity\ of\ click\ based\ on\ bkSize.\r\n
+comment8.params=a\ b
+comment8.target=boolean\ isLegalMove(int,\ int)
+comment8.text=\r\n\ Returns\ true\ iff\ a\ move\ from\ location\ a\ to\ b\ is\ legal,\ otherwise\ returns\ false.\r\n\ For\ example\:\ a,b\ \=\ 1,2\ ->\ true;\ 1,3\ ->\ false;\ 20,17\ ->\ true.\ Refer\ to\ the\ \r\n\ project\ description\ for\ details.\r\n\ Throws\ an\ exception\ for\ illegal\ arguments.\r\n
+comment9.params=tigerLoc\ bd\ scapeGoat
+comment9.target=boolean\ canEatGoat(int,\ Board,\ int[])
+comment9.text=\r\n\ Returns\ true\ of\ the\ tiger\ at\ tigerLoc\ (location)\ can\ eat\ any\ goat\r\n\ the\ location\ of\ the\ goat\ that\ can\ be\ eaten\ is\ filled\ in\ scapeGoat[0]\r\n\ the\ destination\ where\ the\ tiger\ will\ land\ after\ eating\ the\ goad\ is\ \r\n\ filled\ in\ scapeGoat[1].\ Returns\ false\ if\ the\ tiger\ cannot\ eat\ any\ goat\r\n\ \r\n\ NOTE\:\ This\ method\ can\ use\ legalEats[][]\ only\ and\ no\ other\ array.\r\n
+numComments=10

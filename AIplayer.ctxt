@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=AIplayer
+comment1.params=
+comment1.target=AIplayer()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ AIplayer.\r\n\ Initializes\ instance\ variables.\r\n
+comment2.params=bd
+comment2.target=void\ placeTiger(Board)
+comment2.text=\r\n\ Place\ tiger\ in\ a\ random\ vacant\ location\ on\ the\ Board\r\n\ Update\ the\ board,\ the\ tiger\ count\ and\ tigerLocs.\r\n
+comment3.params=bd
+comment3.target=int\ makeAmove(Board)
+comment3.text=\r\n\ If\ possible\ to\ eat\ a\ goat,\ must\ eat\ and\ return\ 1\r\n\ If\ cannot\ eat\ any\ goat,\ make\ a\ move\ and\ return\ 0\r\n\ If\ cannot\ make\ any\ move\ (all\ Tigers\ blocked),\ return\ -1\r\n
+comment4.params=bd
+comment4.target=boolean\ simpleMove(Board)
+comment4.text=\r\n\ Randomly\ choose\ a\ tiger,\ move\ it\ to\ a\ legal\ destination\ and\ return\ true\r\n\ if\ none\ of\ the\ tigers\ can\ move,\ return\ false.\r\n\ Update\ the\ board\ and\ the\ tiger\ location\ (tigerLocs)\r\n
+comment5.params=bd
+comment5.target=boolean\ eatGoat(Board)
+comment5.text=\r\n\ If\ possible,\ eat\ a\ goat\ and\ return\ true\ otherwise\ return\ false.\r\n\ Update\ the\ board\ and\ the\ tiger\ location\ (tigerLocs)\r\n\ \r\n\ Hint\:\ use\ the\ canEatGoat\ method\ of\ GameRules\r\n
+numComments=6
