@@ -75,8 +75,15 @@ public class GameRules
     {
         //TODO 12
         this.numGoats += n;
+
+        if (this.numGoats == MAXGOATS) {
+            System.out.println("Changing to move stage");
+            this.moveStage = true;
+        }
+
         if (this.isMoveStage()) {
-            this.goatsTurn = !this.isGoatsTurn(); // Sets opposite
+            this.goatsTurn = false; // Sets opposite
+            System.out.println("goats turn is now false");
         }
        
     }
@@ -95,7 +102,8 @@ public class GameRules
     public void incrTigers()
     {
         //TODO 16
-        
+        numTigers++;
+        this.goatsTurn = true;
     }
         
     /**
@@ -143,8 +151,17 @@ public class GameRules
      */
     public boolean isLegalMove(int a, int b)
     {
-        //TODO 19        
-        return false;        
+        //TODO 19
+
+        int numberToCheck = legalMoves[0].length;
+        System.out.println(numberToCheck);
+
+        for (int i = 0; i < legalMoves[a].length; i++) {
+            if (legalMoves[a][i] == b) {
+                return true;
+            }
+        }
+        return false;
     }
     
     /**
@@ -157,7 +174,30 @@ public class GameRules
      */
     public boolean canEatGoat(int tigerLoc, Board bd, int[] scapeGoat)
     {
-        //TODO 23      
+        //TODO 23
+
+        // tiger location e.g 0
+        // array which contains 1 at goat locations or 0 at vacants
+
+        int numToCheck = (legalEats[tigerLoc].length) / 2;
+
+        // every Mod 2 = 0 is a goat location to check
+        // every Mod 2 = 1 is a vacant sapce to check
+
+        for (int i = 0; i < numToCheck; i += 2) {
+            if (bd.isGoat(legalEats[tigerLoc][i])){ // Checks if there is a goat at the legal eat location
+                System.out.println(legalEats[tigerLoc][i]);
+                System.out.println("There is a goat at a potential eat location");
+                for (int j = 1; j < numToCheck; j += 2) {
+                    if (bd.isVacant(legalEats[tigerLoc][j])) { // Vacacnt spot at where we want to jump to
+                        System.out.println("Found a yummy boy");
+                        scapeGoat[0] = legalEats[tigerLoc][i];
+                        scapeGoat[1] = legalEats[tigerLoc][j];
+                        return true;
+                    }
+                }
+            }
+        }
            
         return false;        
     }

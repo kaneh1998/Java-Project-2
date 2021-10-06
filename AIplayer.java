@@ -3,9 +3,9 @@
  * Implments a simple AI player to 
  * automatically contol the tiger moves
  *
- * @author Professor Ajmal Mian
+ * @author Professor Ajmal Mian 
  * @dated Sep 2021
- * @version 1.0
+ * @version 1.0 
  */
 //import java.util.Random;
 import java.util.*;
@@ -40,18 +40,17 @@ public class AIplayer
         //TODO 15
         int i = 0;
 
-        while (i != 1) {
+        while (i != 3) {
+            System.out.println("Tigers: " + ntigers);
             int selectedLocation = rn.nextInt(24);
             System.out.println(selectedLocation);
-            if (ntigers == 4) {
-                i++;
+            if (ntigers == 3) {
+                break;
             }
             if (bd.isVacant(selectedLocation)) {
                 ntigers++;
                 bd.setTiger(selectedLocation);
-                tigerLocs[selectedLocation] = 1;
-                i++;
-            } else {
+                tigerLocs[i] = selectedLocation;
                 i++;
             }
         }
@@ -77,6 +76,32 @@ public class AIplayer
     private boolean simpleMove(Board bd)
     {
         //TODO 21
+
+        System.out.println("Tiger 1 is at location " + tigerLocs[0]);
+        System.out.println("Tiger 2 is at location " + tigerLocs[1]);
+        System.out.println("Tiger 3 is at location " + tigerLocs[2]);
+
+        for (int i = 0; i < 3; i++) {
+            int randomLocation = tigerLocs[i];
+            System.out.println("Checking tiger " + i + " simple moves");
+            for (int j = 0; j < 24; j++) {
+                System.out.println(rul.isLegalMove(randomLocation, j));
+                if (rul.isLegalMove(randomLocation, j)) {
+                    if (bd.isVacant(j)) {
+                        System.out.println("Tiger " + i + " is moving");
+                        System.out.println("Moving from " + randomLocation + " To " + j);
+                        bd.swap(randomLocation, j);
+                        tigerLocs[0] = j;
+                        return true;
+                    } else {
+                        System.out.println("Found a location but not vacant");
+                    }
+                }
+            }
+        }
+
+        System.out.println("We are checking simple move for tiger");
+
         return false; 
     }
     
@@ -88,7 +113,41 @@ public class AIplayer
      */
     private boolean eatGoat(Board bd)
     {
-        //TODO 22        
+        //TODO 22
+
+        // Cycle through where the goats are
+        // Check each tiger can't eat a goat
+
+        int[] scapegoat = new int[2]; // Holds locations of all goats currently on board
+
+        /*
+        for (int i = 0; i < 24; i++) { // Cycles through all locations and puts 1 where goats are
+            if (bd.isGoat(i)) {
+                scapegoat[i] = 1;
+                System.out.println("Goat at: " + i);
+            } else {
+                scapegoat[i] = 0;
+            }
+        }
+        */
+
+        for (int i = 0; i < 3; i++) { // Checks each tiger
+            int randomLoc = tigerLocs[i]; // randomLoc refers to tiger (i) location
+            for (int j = 0; j < 24; j++) {
+                System.out.println("Checking if we can eat a goat atm...");
+                if(rul.canEatGoat(randomLoc, bd, scapegoat)) {
+                    System.out.println("Can eat a goat here");
+                    System.out.println("Goat eaten at loc: " + scapegoat[0] + " tiger jumped to loc: " + scapegoat[1]);
+                    // Set tiger to new location
+                    // Set goat to vacant location
+                    // Minus a goat from the count
+                    // Update tigerLocs[]
+                }
+
+
+            }
+        }
+
         return false;
     }
    

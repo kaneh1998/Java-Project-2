@@ -103,8 +103,11 @@ public class Board
     {
         //TODO 9
         //tiger in a & goat in b? swap a and b?
+        Piece[] temp = new Piece[1];
+        temp[0] = this.board[a];
 
-
+        this.board[a] = this.board[b];
+        this.board[b] = temp[0];
         
     }
 }

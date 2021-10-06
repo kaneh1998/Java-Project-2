@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Board
+comment0.text=\r\n\ Maintains\ and\ updates\ the\ status\ of\ the\ board\r\n\ i.e.\ the\ locations\ of\ goats\ and\ tigers\r\n\r\n\ @Student\ 1\ Name\:\ \r\n\ @Student\ 1\ Number\:\ \r\n\ \r\n\ @Student\ 2\ Name\:\ \r\n\ @Student\ 2\ Number\:\r\n
+comment1.params=
+comment1.target=Board()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Board.\r\n\ Initializes\ the\ board\ VACANT.\r\n
+comment2.params=a
+comment2.target=boolean\ isVacant(int)
+comment2.text=\r\n\ Checks\ if\ the\ location\ a\ is\ VACANT\ on\ the\ board\r\n
+comment3.params=a
+comment3.target=void\ setVacant(int)
+comment3.text=\r\n\ Sets\ the\ location\ a\ on\ the\ board\ to\ VACANT\r\n
+comment4.params=a
+comment4.target=boolean\ isGoat(int)
+comment4.text=\r\n\ Checks\ if\ the\ location\ a\ on\ the\ board\ is\ a\ GOAT\r\n
+comment5.params=a
+comment5.target=void\ setGoat(int)
+comment5.text=\r\n\ Sets\ the\ location\ a\ on\ the\ board\ to\ GOAT\r\n
+comment6.params=a
+comment6.target=void\ setTiger(int)
+comment6.text=\r\n\ Sets\ the\ location\ a\ on\ the\ board\ to\ TIGER\r\n
+comment7.params=a\ b
+comment7.target=void\ swap(int,\ int)
+comment7.text=\r\n\ Moves\ a\ piece\ by\ swapping\ the\ contents\ of\ a\ and\ b\r\n
+numComments=8
