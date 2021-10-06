@@ -24,6 +24,10 @@ public class AIplayer
     public AIplayer()
     {
         // TODO 14
+        this.ntigers = 0;
+        rn = new Random();
+        rul = new GameRules();
+        this.tigerLocs = new int[24];
         
     }
 
@@ -34,7 +38,23 @@ public class AIplayer
     public void placeTiger(Board bd)
     {
         //TODO 15
-        
+        int i = 0;
+
+        while (i != 1) {
+            int selectedLocation = rn.nextInt(24);
+            System.out.println(selectedLocation);
+            if (ntigers == 4) {
+                i++;
+            }
+            if (bd.isVacant(selectedLocation)) {
+                ntigers++;
+                bd.setTiger(selectedLocation);
+                tigerLocs[selectedLocation] = 1;
+                i++;
+            } else {
+                i++;
+            }
+        }
     }
     
     /**

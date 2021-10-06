@@ -86,6 +86,15 @@ public class Board
         this.board[a] = Piece.TIGER;
         
     }
+
+    public boolean isTiger(int a) // Custom method
+    {
+        if (this.board[a] == Piece.TIGER) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     /**
      * Moves a piece by swapping the contents of a and b
@@ -94,6 +103,7 @@ public class Board
     {
         //TODO 9
         //tiger in a & goat in b? swap a and b?
+
 
         
     }
